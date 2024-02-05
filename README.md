@@ -2,7 +2,7 @@
 
 [![Front End Engineer](https://img.shields.io/badge/Front%20End%20Engineer-Get%20In%20Touch-blueviolet)](https://api.whatsapp.com/send?phone=5511978959839&text=Ol%C3%A1%2C%20vim%20pelo%20seu%20github%2C%20tudo%20bem%3F)
 
-<img width="1440" height="1024" alt="image" src="./public/chrismcorrea.png">
+<img width="1440" alt="image" src="./public/chrismcorrea.png">
 
 > Hello, welcome to My Portfolio. A web view of some of my achivements and projects. 😀
 > This project was made thinking on a simple form to show my projects and knowledge with you all. This is the first version of my portfolio, and probaly will change. 🤓
