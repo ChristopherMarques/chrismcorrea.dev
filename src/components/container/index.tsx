@@ -1,15 +1,17 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 interface ContainerProps {
-  children: ReactNode;
+	children: ReactNode
 }
 
 const Container = ({ children }: ContainerProps) => {
-  return (
-    <div className="flex flex-row w-100 h-100 justify-end py-1.5 px-3">
-      {children}
-    </div>
-  );
-};
+	return (
+		<div className="flex flex-col w-screen h-screen py-1.5 px-3 bg-[url('/img/noise-background.svg')]">
+			<div className="flex flex-col w-full h-full justify-center bg-[url('/img/grid.svg')] bg-center bg-opacity-5 bg-no-repeat object-cover">
+				{children}
+			</div>
+		</div>
+	)
+}
 
-export default Container;
+export default Container
