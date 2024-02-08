@@ -8,6 +8,7 @@ import {
 } from '../ui/navigation-menu'
 
 const links = [
+	{ name: 'home', link: '/' },
 	{ name: 'who am I?', link: '/who-im-am' },
 	{ name: 'projects', link: '/projects' },
 	{ name: 'contact', link: '/contact' },
