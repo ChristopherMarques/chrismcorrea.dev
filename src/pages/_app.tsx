@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Container from '@/components/container'
-import Navbar from '@/components/navbar'
+import Container from '@/components/Container'
+import Navbar from '@/components/Navbar'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import Loader from '@/components/loader'
+import Loader from '@/components/Loader'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(true)
