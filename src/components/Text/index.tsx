@@ -6,7 +6,7 @@ interface TextProps {
 
 const Text = ({ children }: TextProps) => {
 	return (
-		<p className='text-wrap md:text-2xl font-ubuntu text-left md:max-w-96'>
+		<p className='text-wrap text-center md:text-2xl font-ubuntu text-left md:max-w-[40rem]'>
 			{children}
 		</p>
 	)

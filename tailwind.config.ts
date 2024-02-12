@@ -22,6 +22,9 @@ const config = {
 			},
 		},
 		extend: {
+			transitionTimingFunction: {
+				'flip-text': 'cubic-bezier(.65,0,.35,1)',
+			},
 			colors: {
 				border: 'var(--border)',
 				input: 'var(--input)',

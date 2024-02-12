@@ -1,22 +1,17 @@
 import Image from 'next/image'
 import HeroNameSection from './HeroNameSection'
-import HeroSocialSection from './HeroSocialSection'
+import Text from '../Text'
 
 const HeroBanner = () => {
 	return (
 		<>
-			<div className='flex sm:flex-row flex-col justify-center w-full items-center'>
-				<Image
-					alt='Chris'
-					width={400}
-					height={400}
-					src='/img/me.png'
-					quality={100}
-					className='rounded-full border-none drop-shadow-[0_20px_13px_rgba(252,217,184,0.05)]'
-				/>
+			<div className='flex flex-col justify-center w-full h-full items-center bg-[url("/img/hero-section.svg")] bg-no-repeat bg-center object-cover'>
 				<HeroNameSection />
+				<Text>
+					A frontend developer & software engineer propelling project dreams to
+					reality.
+				</Text>
 			</div>
-			<HeroSocialSection />
 		</>
 	)
 }

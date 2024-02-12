@@ -1,15 +1,8 @@
 const HeroNameSection = () => {
 	return (
-		<div className='flex flex-col ml-2'>
-			<div className='flex flex-col justify-between'>
-				<span className='font-teko md:text-7xl md:mb-[-50px] md:ml-2 text-3xl'>
-					{"Hi, I'm"}
-				</span>
-				<h1 className='font-teko md:text-[22.5rem] text-7xl'>Chris</h1>
-			</div>
-			<h2 className='font-ubuntu text-2xl md:mt-[-65px] md:ml-72 text-primary'>
-				a frontend developer
-			</h2>
+		<div className='flex flex-col xl:text-[20rem] md:text-[10rem] text-9xl sm:text-[5rem] xl:leading-[16rem] leading-[8rem] justify-center items-end uppercase'>
+			<h1 className='font-teko'>{"hi there, i'm"}</h1>
+			<h1 className='font-teko'>chris</h1>
 		</div>
 	)
 }
