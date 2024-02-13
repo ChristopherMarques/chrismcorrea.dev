@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Container from '@/components/Container'
+import Loader from '@/components/Loader'
 import Navbar from '@/components/Navbar'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import Loader from '@/components/Loader'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(true)
@@ -36,14 +36,12 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			{loading ? (
-				<Container>
+				<div className="flex flex-col w-screen h-screen justify-center items-center bg-[url('/img/noise-background.svg')] object-cover bg-center bg-no-repeat bg-opacity-0">
 					<Loader />
-				</Container>
+				</div>
 			) : (
 				<Container showGrid>
-					<div className='flex justify-end w-100 mt-4'>
-						<Navbar />
-					</div>
+					<Navbar />
 					<Component {...pageProps} />
 				</Container>
 			)}

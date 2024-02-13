@@ -5,7 +5,7 @@ import Text from '../Text'
 const HeroBanner = () => {
 	return (
 		<>
-			<div className='flex flex-col justify-center w-full h-full items-center bg-[url("/img/hero-section.svg")] bg-no-repeat bg-center object-cover'>
+			<div className='flex flex-col justify-center  h-screen items-center bg-[url("/img/hero-section.svg")] bg-no-repeat bg-center object-cover'>
 				<HeroNameSection />
 				<Text>
 					A frontend developer & software engineer propelling project dreams to

@@ -10,13 +10,14 @@ import Image from 'next/image'
 
 const links = [
 	{ name: 'who am I?', link: '#who-im-am' },
+	{ name: 'services', link: '#services' },
 	{ name: 'projects', link: '#projects' },
 	{ name: 'contact', link: '#contact' },
 ]
 
 const Navbar = () => {
 	return (
-		<div className='flex flex-row justify-between w-full'>
+		<div className='flex flex-row justify-between px-4 py-4'>
 			<Link href='/' legacyBehavior passHref>
 				<Image
 					src='/img/logo.svg'
@@ -27,7 +28,7 @@ const Navbar = () => {
 					className='cursor-pointer hover:animate-pulse'
 				/>
 			</Link>
-			<NavigationMenu className='mt-5'>
+			<NavigationMenu>
 				<NavigationMenuList>
 					{links.map((item, index) => (
 						<div key={index}>
