@@ -3,6 +3,7 @@ import { useScroll, useTransform, motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import Lenis from '@studio-freight/lenis'
 import useDimension from '@/hooks/useDimension'
+import About from '@/components/About'
 
 export default function Home() {
 	const container = useRef<HTMLDivElement>(null)
@@ -28,15 +29,7 @@ export default function Home() {
 			<div className='flex flex-col justify-center items-center '>
 				<HeroBanner />
 			</div>
-			<motion.div
-				style={{ y }}
-				className='flex flex-col h-screen items-center justify-center rounded-t-[1.3rem] bg-[url("/img/noise-about.svg")]'
-			>
-				<h3 className='text-background font-teko text-5xl'>Olá Chris</h3>
-			</motion.div>
-			<div className='flex flex-col h-screen justify-center items-center '>
-				<h3 className='text-background font-teko text-5xl'>Olá Chris</h3>
-			</div>
+			<About y={y} />
 		</div>
 	)
 }
