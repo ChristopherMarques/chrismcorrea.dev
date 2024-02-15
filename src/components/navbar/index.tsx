@@ -9,7 +9,7 @@ import {
 import Image from 'next/image'
 
 const links = [
-	{ name: 'who am I?', link: '#who-im-am' },
+	{ name: 'about me', link: '#about-me' },
 	{ name: 'services', link: '#services' },
 	{ name: 'projects', link: '#projects' },
 	{ name: 'contact', link: '#contact' },

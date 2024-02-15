@@ -1,9 +1,10 @@
-import HeroBanner from '@/components/HeroSection'
-import { useScroll, useTransform, motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import Lenis from '@studio-freight/lenis'
-import useDimension from '@/hooks/useDimension'
+// Home.tsx
 import About from '@/components/About'
+import HeroBanner from '@/components/HeroSection'
+import useDimension from '@/hooks/useDimension'
+import Lenis from '@studio-freight/lenis'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 export default function Home() {
 	const container = useRef<HTMLDivElement>(null)
@@ -13,7 +14,7 @@ export default function Home() {
 		offset: ['start end', 'end start'],
 	})
 
-	const y = useTransform(scrollYProgress, [0, 1], [0, height])
+	const y = useTransform(scrollYProgress, [0, 1], ['0%', height])
 
 	useEffect(() => {
 		const lenis = new Lenis()
@@ -22,14 +23,14 @@ export default function Home() {
 			requestAnimationFrame(raf)
 		}
 		requestAnimationFrame(raf)
-	})
+	}, [])
 
 	return (
-		<div ref={container} className='w-full h-full '>
-			<div className='flex flex-col justify-center items-center '>
+		<div ref={container} className='w-full h-full'>
+			<motion.div className='flex flex-col h-screen justify-center items-center'>
 				<HeroBanner />
-			</div>
-			<About y={y} />
+			</motion.div>
+			<About y={y} /> {/* Pass y as a prop */}
 		</div>
 	)
 }

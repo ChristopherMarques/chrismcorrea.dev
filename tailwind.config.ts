@@ -10,6 +10,14 @@ const config = {
 	],
 	prefix: '',
 	theme: {
+		backgroundImage: {
+			hero: `
+				url(/img/noise-background.svg), url('/img/grid.svg')
+			`,
+		},
+		backgroundSize: {
+			hero: '100%, 100%',
+		},
 		fontFamily: {
 			Teko: ['Teko', 'sans-serif'],
 			Ubuntu: ['Ubuntu', 'serif'],
