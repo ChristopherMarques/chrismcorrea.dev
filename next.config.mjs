@@ -1,7 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-	reactStrictMode: false,
-	typescript: {},
-}
+const { withTypeScript } = require('@zeit/next-typescript')
 
-export default nextConfig
+module.exports = withTypeScript({
+	reactStrictMode: false,
+})
