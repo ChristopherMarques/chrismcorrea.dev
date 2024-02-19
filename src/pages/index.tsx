@@ -1,4 +1,3 @@
-// Home.tsx
 import About from '@/components/About'
 import HeroBanner from '@/components/HeroSection'
 import Lenis from '@studio-freight/lenis'

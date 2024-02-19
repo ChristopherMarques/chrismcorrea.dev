@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Loader = () => {
 	return (
-		<div className='flex justify-center items-center rounded-full border-transparent'>
+		<div className='flex flex-col justify-center items-center  w-full h-full'>
 			<Image
 				quality={90}
 				src={'/img/loader.svg'}
@@ -14,4 +14,5 @@ const Loader = () => {
 		</div>
 	)
 }
+
 export default Loader

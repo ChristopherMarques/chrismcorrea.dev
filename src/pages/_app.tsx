@@ -1,50 +1,49 @@
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Container from '@/components/Container'
 import Loader from '@/components/Loader'
 import Navbar from '@/components/Navbar'
+import { AnimatePresence, motion } from 'framer-motion' // Import useAnimation hook
 import '@/styles/globals.css'
+import { useRouter } from 'next/router'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(true)
 	const router = useRouter()
 
 	useEffect(() => {
-		const handleStart = () => {
-			setLoading(true)
-		}
-		const handleComplete = () => {
-			setTimeout(() => {
-				setLoading(false)
-			}, 2000)
-		}
+		const timer = setTimeout(() => {
+			setLoading(false)
+		}, 2000)
 
-		router.events.on('routeChangeStart', handleStart)
-		router.events.on('routeChangeComplete', handleComplete)
-		router.events.on('routeChangeError', handleComplete)
+		return () => clearTimeout(timer)
+	}, [router.route])
 
-		handleComplete()
-
-		return () => {
-			router.events.off('routeChangeStart', handleStart)
-			router.events.off('routeChangeComplete', handleComplete)
-			router.events.off('routeChangeError', handleComplete)
-		}
-	}, [router.events])
+	const loaderVars = {
+		initial: { height: '100vh' },
+		exit: {
+			height: '-100vh',
+			transition: { duration: 2, type: 'easeInOut' },
+		},
+	}
 
 	return (
-		<>
-			{loading ? (
-				<div className="flex flex-col w-screen h-screen justify-center items-center bg-[url('/img/noise-background.svg')] object-cover bg-center bg-no-repeat bg-opacity-0">
-					<Loader />
-				</div>
-			) : (
+		<AnimatePresence>
+			<motion.div
+				className="flex flex-col origin-top w-full h-full bg-[url('/img/noise-background.svg')] object-cover bg-center bg-no-repeat bg-opacity-0"
+				initial={{ scaleY: 1 }}
+				animate={loading ? 'initial' : 'exit'}
+				exit={{ scaleY: 0, transition: { duration: 0.5 } }}
+				variants={loaderVars}
+			>
+				{loading && <Loader />}
+			</motion.div>
+			{!loading && (
 				<Container showGrid>
 					<Navbar />
 					<Component {...pageProps} />
 				</Container>
 			)}
-		</>
+		</AnimatePresence>
 	)
 }
