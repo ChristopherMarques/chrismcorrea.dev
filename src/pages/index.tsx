@@ -1,20 +1,14 @@
 // Home.tsx
 import About from '@/components/About'
 import HeroBanner from '@/components/HeroSection'
-import useDimension from '@/hooks/useDimension'
 import Lenis from '@studio-freight/lenis'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 export default function Home() {
-	const container = useRef<HTMLDivElement>(null)
-	const { height } = useDimension()
-	const { scrollYProgress } = useScroll({
-		target: container,
-		offset: ['start end', 'end start'],
-	})
-
-	const y = useTransform(scrollYProgress, [0, 1], ['0%', height])
+	const { scrollYProgress } = useScroll()
+	const aboutTranslateY = useTransform(scrollYProgress, [0, 1], ['0%', '-100%'])
+	const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
 	useEffect(() => {
 		const lenis = new Lenis()
@@ -26,11 +20,17 @@ export default function Home() {
 	}, [])
 
 	return (
-		<div ref={container} className='w-full h-full'>
-			<motion.div className='flex flex-col h-screen justify-center items-center'>
+		<div className='w-full h-full'>
+			<motion.div
+				id='hero'
+				style={{ opacity: heroOpacity }}
+				className='flex flex-col h-screen justify-center items-center'
+			>
 				<HeroBanner />
 			</motion.div>
-			<About y={y} /> {/* Pass y as a prop */}
+			<motion.div style={{ translateY: aboutTranslateY }}>
+				<About />
+			</motion.div>
 		</div>
 	)
 }

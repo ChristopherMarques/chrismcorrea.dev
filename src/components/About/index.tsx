@@ -2,15 +2,9 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const About = ({ y }: { y: any }) => {
-	// Receive y as a prop
-	console.log(y)
+const About = () => {
 	return (
-		<motion.div
-			style={{ y }} // Use y in the style attribute
-			id='about-me'
-			className='flex flex-col h-full justify-center rounded-t-[1.3rem] bg-[url("/img/noise-about.svg")]'
-		>
+		<div className='flex flex-col h-full justify-center rounded-t-[1.3rem] bg-[url("/img/noise-about.svg")]'>
 			<motion.h3
 				initial={{ x: '-100px' }}
 				whileInView={{ x: '0px' }}
@@ -42,7 +36,7 @@ const About = ({ y }: { y: any }) => {
 					vehicula dignissim.
 				</p>
 			</motion.div>
-		</motion.div>
+		</div>
 	)
 }
 
