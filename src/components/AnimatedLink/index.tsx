@@ -19,7 +19,7 @@ export default function AnimatedLink({ title }) {
 					animation={letterAnimation}
 				/>
 			</div>
-			<div className='absolute top-0 opacity-0 hover:opacity-100 hover:text-primary'>
+			<div className='absolute top-0 opacity-0 hover:opacity-100'>
 				<AnimatedWord
 					title={title}
 					isHovered={isHovered}

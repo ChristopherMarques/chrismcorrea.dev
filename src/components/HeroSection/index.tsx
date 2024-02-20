@@ -9,7 +9,7 @@ const HeroBanner = () => {
 				initial={{ y: '-100px' }}
 				whileInView={{ y: '0px' }}
 				transition={{ duration: 1, ease: 'easeInOut' }}
-				className='flex flex-col justify-center h-screen items-center bg-[url("/img/hero-section.svg")] bg-no-repeat bg-center object-cover'
+				className='flex flex-col h-full mt-16 items-center'
 			>
 				<HeroNameSection />
 				<Text>

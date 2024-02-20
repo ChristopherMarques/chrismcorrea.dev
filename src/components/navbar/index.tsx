@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import AnimatedLink from '../AnimatedLink'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
 
 const links = [
 	{ name: 'about me', link: '#about-me' },
@@ -12,9 +10,8 @@ const links = [
 ]
 
 const Navbar = () => {
-	const [isHovered, setHovered] = useState(false)
 	return (
-		<div className='flex flex-row justify-between px-4 pt-4'>
+		<div className='flex flex-row justify-between px-4 pt-2'>
 			<Link href='/' legacyBehavior passHref>
 				<Image
 					src='/img/logo.svg'
@@ -22,10 +19,10 @@ const Navbar = () => {
 					height={90}
 					quality={100}
 					alt='logotipe'
-					className='cursor-pointer hover:animate-pulse'
+					className='cursor-pointer hover:animate-pulse -mt-20'
 				/>
 			</Link>
-			<div className='flex flex-col px-4 pt-4 gap-2 font-Teko text-3xl'>
+			<div className='flex flex-col gap-2 font-Teko text-4xl z-[9999]'>
 				{links.map((link, index) => {
 					return (
 						<div key={index}>

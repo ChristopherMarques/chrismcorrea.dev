@@ -16,7 +16,7 @@ export const letterAnimation = {
 		y: 0,
 	},
 	hover: {
-		y: -30,
+		y: -50,
 		transition: {
 			duration: 0.3,
 			ease: [0.6, 0.01, 0.05, 0.95],
@@ -27,7 +27,7 @@ export const letterAnimation = {
 
 export const letterAnimationTwo = {
 	rest: {
-		y: 30,
+		y: 50,
 	},
 	hover: {
 		y: 0,

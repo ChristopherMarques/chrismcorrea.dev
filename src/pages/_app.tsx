@@ -22,8 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
 	const loaderVars = {
 		initial: { height: '100vh' },
 		exit: {
-			height: '-100vh',
-			transition: { duration: 2, type: 'easeInOut' },
+			height: '0vh',
+			transition: { duration: 0.5, type: 'easeInOut' },
 		},
 	}
 
