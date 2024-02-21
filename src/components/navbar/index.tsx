@@ -11,7 +11,7 @@ const links = [
 
 const Navbar = () => {
 	return (
-		<div className='flex flex-row justify-between px-4 pt-2'>
+		<header className='flex flex-row justify-between px-4 pt-2'>
 			<Link href='/' legacyBehavior passHref>
 				<Image
 					src='/img/logo.svg'
@@ -26,14 +26,14 @@ const Navbar = () => {
 				{links.map((link, index) => {
 					return (
 						<div key={index}>
-							<Link href={link.link} legacyBehavior passHref>
+							<Link href={link.link} passHref>
 								<AnimatedLink title={link.name} />
 							</Link>
 						</div>
 					)
 				})}
 			</div>
-		</div>
+		</header>
 	)
 }
 

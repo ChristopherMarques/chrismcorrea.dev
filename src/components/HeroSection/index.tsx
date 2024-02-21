@@ -12,10 +12,10 @@ const HeroBanner = () => {
 				className='flex flex-col h-full mt-16 items-center'
 			>
 				<HeroNameSection />
-				<Text>
+				<p className='text-wrap md:text-2xl font-ubuntu md:max-w-[40rem] text-center'>
 					A frontend developer & software engineer propelling project dreams to
 					reality.
-				</Text>
+				</p>
 			</motion.div>
 		</>
 	)

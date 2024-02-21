@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<AnimatePresence>
 			<motion.div
-				className="flex flex-col origin-top w-full h-full bg-[url('/img/noise-background.svg')] object-cover bg-center bg-no-repeat bg-opacity-0"
+				className="flex flex-col origin-top w-full h-full bg-[url('/img/noise-background.svg')] object-cover bg-center bg-no-repeat"
 				initial={{ scaleY: 1 }}
 				animate={loading ? 'initial' : 'exit'}
 				exit={{ scaleY: 0, transition: { duration: 0.5 } }}
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				{loading && <Loader />}
 			</motion.div>
 			{!loading && (
-				<Container showGrid>
+				<Container>
 					<Navbar />
 					<Component {...pageProps} />
 				</Container>
