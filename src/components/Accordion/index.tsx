@@ -12,10 +12,10 @@ interface AccordionProps {
 }
 
 const Accordion = ({ items }: AccordionProps) => {
-	const [activeIndex, setActiveIndex] = useState<number | null>(null)
+	const [activeIndex, setActiveIndex] = useState<number>(0)
 
 	const toggleAccordion = (index: number) => {
-		setActiveIndex(activeIndex === index ? null : index)
+		setActiveIndex(activeIndex === index ? 0 : index)
 	}
 
 	return (
@@ -24,7 +24,9 @@ const Accordion = ({ items }: AccordionProps) => {
 				<div
 					key={index}
 					className={`accordion-item w-full py-2 ${
-						activeIndex === index ? 'bg-background rounded-xl p-5' : ''
+						activeIndex === index
+							? 'bg-background w-full rounded-xl p-5'
+							: 'p-5 w-full'
 					}`}
 				>
 					<motion.button
@@ -36,9 +38,12 @@ const Accordion = ({ items }: AccordionProps) => {
 							transition: { ease: 'easeInOut', duration: 0.3 },
 						}}
 					>
-						<p className='transition ease-in-out duration-300 delay-300 transform hover:translate-x-5'>
+						<Text
+							textTag='h5'
+							className='transition ease-in-out duration-300 delay-300 transform hover:translate-x-5'
+						>
 							{item.title}
-						</p>
+						</Text>
 						<span className='font-thin ml-10'>
 							{activeIndex === index ? '-' : '+'}
 						</span>

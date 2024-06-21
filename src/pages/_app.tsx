@@ -1,11 +1,11 @@
-import type { AppProps } from 'next/app'
-import { useEffect, useState } from 'react'
 import Container from '@/components/Container'
 import Loader from '@/components/Loader'
 import Navbar from '@/components/Navbar'
-import { AnimatePresence, motion } from 'framer-motion' // Import useAnimation hook
 import '@/styles/globals.css'
+import { AnimatePresence, motion } from 'framer-motion' // Import useAnimation hook
+import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(true)
@@ -39,8 +39,10 @@ export default function App({ Component, pageProps }: AppProps) {
 				{loading && <Loader />}
 			</motion.div>
 			{!loading && (
-				<Container>
-					<Navbar />
+				<Container className='flex flex-col w-full h-screen bg-hero bg-contain bg-no-repeat bg-top _bg-center'>
+					<Container className='p-5'>
+						<Navbar />
+					</Container>
 					<Component {...pageProps} />
 				</Container>
 			)}

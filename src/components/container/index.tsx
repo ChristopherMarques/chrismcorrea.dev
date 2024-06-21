@@ -1,12 +1,17 @@
-import { ReactNode } from 'react'
+import { HTMLProps, PropsWithChildren, ReactNode } from 'react'
 
 interface ContainerProps {
-	children: ReactNode
+	className?: HTMLProps<HTMLElement>['className']
+	id?: HTMLProps<HTMLElement>['id']
 }
 
-const Container = ({ children }: ContainerProps) => {
+const Container = ({
+	children,
+	className = '',
+	id = 'container',
+}: PropsWithChildren<ContainerProps>) => {
 	return (
-		<div className='flex flex-col w-full h-full bg-hero bg-contain bg-no-repeat bg-top _bg-center'>
+		<div id={id} className={className}>
 			{children}
 		</div>
 	)
